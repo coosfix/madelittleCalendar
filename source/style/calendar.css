@@ -1,0 +1,161 @@
+:root{
+    --ani-speed:2s;
+}
+
+.claendarMain{
+    font-family: 'Consolas', '微軟正黑體', sans-serif;
+    color: white;
+    width:25rem;
+    background-color: #252525;
+    margin:0 auto;
+}
+
+.calendarHeader{
+    text-align: left;
+    margin-left: 3rem;
+    font-size:1.8rem;
+    padding:10px 0;
+}
+
+.headerDateTime{
+    display:flex;
+    justify-content :space-around;
+    padding:1.5rem 0;
+    border-top:1px solid white;
+    
+}
+
+.arrow{
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+}
+.arrow:hover.arrow:before,
+.arrow:hover.arrow:after {
+    background: rgb(255, 255, 255);
+    transition: all .3s;
+}
+.arrow:before,
+.arrow:after {
+  background: rgb(116, 114, 114);
+  content: '';
+  display: block;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+}
+.arrow.next {
+    animation: arrow-movement-next var(--ani-speed) ease-in-out infinite;
+}
+.arrow.prev {
+    animation: arrow-movement-prev var(--ani-speed) ease-in-out infinite;
+}
+.arrow.next:before {
+    transform: rotate(45deg) ;
+    transform-origin: top right;
+  }
+  
+  .arrow.next:after {
+    transform: rotate(135deg) translateX(3px);
+    transform-origin: top right;
+  }
+
+  .arrow.prev:before {
+      transform: rotate(45deg)  translateX(-3px);
+      transform-origin: top left;
+    }
+    
+    .arrow.prev:after {
+        transform: rotate(135deg) ;
+        transform-origin: top left;
+  }
+.headerDateTime .dateTimetext{
+    font-size: 1.5rem;
+}
+
+.calendarMonth{
+    text-align: center;
+    background-color:#444444;
+}
+
+.nextMonth{
+    color: gray;
+}
+.istoday{
+    background-color: #0078d7;
+}
+.calendar_daytable{
+    width: 100%;
+}
+.calendar_daybody{
+    overflow-y: hidden;
+}
+.calendar_daybody *{
+    transition: border .3s;
+}
+
+.calendar_daytable tbody td{
+    padding: 15px;
+    border :2px solid #77727200
+}
+.calendar_daytable tbody td:hover{
+    cursor: pointer;
+    border:2px solid #ffffff;
+}
+.fade.next{
+    animation: in_next .3s ease both;
+}
+.fade.prev{
+    animation: in_prev .3s ease both;
+}
+.fade.out.next{
+    animation: out_next .3s ease both;
+}
+.fade.out.prev{
+    animation: out_prev .3s ease both;
+}
+@keyframes in_prev {
+    0%{
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+    }
+}
+@keyframes in_next {
+    0%{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+    }
+}
+@keyframes out_prev {
+    0%{
+    }
+    100% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+}
+@keyframes out_next {
+    0%{
+    }
+    100% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+
+}
+@keyframes arrow-movement-next {
+    50% {
+        transform: translateY(10px);
+    }
+}
+@keyframes arrow-movement-prev {
+    50% {
+        transform: translateY(-10px);
+    }
+}

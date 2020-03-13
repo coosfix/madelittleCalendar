@@ -1,0 +1,23 @@
+{
+  "name": "madelittlecalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start":"node index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coosfix/madelittleCalendar.git"
+  },
+  "author": "Jay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coosfix/madelittleCalendar/issues"
+  },
+  "homepage": "https://github.com/coosfix/madelittleCalendar#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
